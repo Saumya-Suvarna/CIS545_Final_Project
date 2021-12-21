@@ -1,0 +1,118 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{hyperref}
+\usepackage{multicol}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue
+    }
+%\usepackage[letterpaper, total={6in, 8in}]{geometry}
+\usepackage[letterpaper]{geometry}
+\geometry{verbose, tmargin=0.8in, bmargin=0.8in, lmargin=1in, rmargin=1in}
+%\title{CIS545: Term Project Proposal}
+%\author{Vijay Yevatkar, Saumya Suvarna}
+%\date{November 2021}
+\begin{document}
+\begingroup  
+  \centering
+  \LARGE CIS545: Term Project Proposal\\[1.5em]
+  \large Vijay Yevatkar, Saumya Suvarna\par
+\endgroup
+%\maketitle
+\section{Data Source}
+\href{http://www.murderdata.org/}{Murder Accountability Project}\\
+“More than 256,000 Americans have perished in unsolved homicides committed since 1980 - more than the combined death toll of all U.S. military actions since World War II.”
+\begin{itemize}
+    \item With no law enforcement agency in America assigned to monitor failed homicide investigations, this project was set up to track unsolved homicides nationwide. 
+    \item It is dedicated to educating Americans on the importance of accurately accounting for unsolved homicides within the United States. 
+    \item The project provides CSV files summarizing all homicides and homicide clearances reported from year 1965 to 2020.
+    \item The size of the data is a little shy of a million records - 827220
+\end{itemize}
+
+\section{Project Plan}
+Our project will be roughly divided into the following sections:
+\begin{enumerate}
+    \item Data Wrangling\\
+    This section will involve:
+        \begin{itemize}
+            \item Cleaning the data.
+            \item Data preprocessing.
+            \item Scaling, normalization, encoding values.
+            \item \textbf{(Stretch Goal)} Merging data from various sources for additional insights.
+        \end{itemize}
+    \item Exploratory Data Analytics\\
+    This section will involve:
+        \begin{itemize}
+            \item Visual representations of interesting aspects of the data.
+            \item General statistics to get a better understanding of the overall data.
+        \end{itemize}
+    \item Modelling and fine tuning\\
+    This section will involve:
+        \begin{itemize}
+            \item Selection of a model.
+            \item Evaluating the performance.
+            \item \textbf{(Stretch Goal)} Comparison between models that might give equivalent or better performance based on the data.
+        \end{itemize}
+    \item Bias Detection and Mitigation\\
+    This section will involve:
+        \begin{itemize}
+            \item Evaluating if the model is making biased decisions (for the purpose of this project we will only consider based on race/gender).
+            \item Mitigating these biases.
+            \item \textbf{(Stretch Goal)} Debiasing the dataset.\\\\
+        \end{itemize}
+    \item Analysis\\
+    This section will involve:
+        \begin{itemize}
+            \item Performance analysis of the model based on hyperparameter tuning.
+            \item Performance comparison between the unbiased and biased models and the bias performance tradeoff.
+        \end{itemize}
+    \item \textbf{(Stretch Goal)} Interpretability\\
+    This section will involve evaluating the interpretability of the model and a detailed analysis of performance vs interpretability tradeoff.
+\end{enumerate}
+
+\section{Objectives}
+\begin{itemize}
+    \item Our main objective of this project is to study the propagation of bias through a machine learning pipeline and the different ways we can mitigate it at various levels.
+    \item At the end of this project we want to have made a prediction on a dataset that contains sensitive information, ensure that it is not biased and perform an analysis on the tradeoff of accuracy vs bias in the model.
+    \item Based on the structure of our dataset, ensemble models will be our first choice of models to work with.
+\end{itemize}
+
+\section{Group Member Responsibilities}
+\begin{multicols}{2}
+\begin{itemize}
+    \item Saumya Suvarna
+    \begin{itemize}
+        \item Exploratory Data Analytics.
+        \item Bias detection and mitigation.
+        \item \textbf{(Stretch Goal)}Interpretability
+    \end{itemize}
+    \item Vijay Yevatkar
+    \begin{itemize}
+        \item Data Preprocessing.
+        \item Modelling and fine tuning.
+        \item Analysis.
+    \end{itemize}
+\end{itemize}
+\end{multicols}
+
+\section{Problem Interest}
+The problem is interesting for the following reasons:
+\begin{itemize}
+    \item We are working on real data collected.
+    \item Many AI applications make biased predictions based on sex, race etc and we want to explore the complexity of ensuring that there is a reasonable bias vs accuracy tradeoff.
+    \item Mitigate choices that are motivated by bias and ensure a degree of explainability for our model. 
+    \item Ensure these steps can be easily replicated for a wider variety of applications to ensure no significantly biased predictions in any space.
+\end{itemize}
+\section{Potential Challenges}
+\begin{itemize}
+    \item One of the major challenges we anticipate with this project is a significant drop in performance with the debiased data/model. 
+    \item We might also face the lack of resources in this particular domain if we run into issues.
+    \item Would we be inducing an unknown bias by removing a known bias? 
+\end{itemize}
+\section{TA}
+We would like to be assigned to Sally Hu as our TA for this project.
+
+\end{document}
